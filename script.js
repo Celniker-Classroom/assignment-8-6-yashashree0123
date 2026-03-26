@@ -1,45 +1,67 @@
 // ----- Functions to implement -----
 
 // 1) myFunc(): persistent counter
-let count=0;
 
-function onMyFuncClick(){
+// practice.js — counter pattern
+let count = 0;
+
+function onMyFuncClick() {
   count++;
   return count;
 }
 
 // 2) getRandomNum(max): 1..max int or 0 if invalid
-function getRandomNum(max){
-  max=parselnt(max);
-  if(isNaN(max) || max<1) return0;
-  return Math.floor(Math.random()*max)+1;
+
+// function onRandomClick(min, maxRand) {
+//   var min = 1;
+//   if (maxRand > 0) {
+//     return Math.random ();
+//   }
+//   else () => {
+//     return 0;
+//   }
+// }
+
+function getRandomNum(max) {
+    max = parseInt(max);
+    if (isNaN(max) || max < 1) return 0;
+    return Math.floor(Math.random() * max) + 1;
 }
 
+// for (let i = 0; i < 5; i++) {
+//     console.log("Random 1-10:", getRandomNum(10));
+// }
+
 // 3) myAdder(x, y): numeric sum
-function myAddre(x,y){
-  x=parselnt(x);
-  y=parselnt(y);
-  ADD=x+y;
+
+function myAdder(x,y) {
+  x=parseInt(x);
+  y=parseInt(y);
+  ADD = x + y;
   return ADD;
 }
+
 // 4) distance(x1, y1, x2, y2): Euclidean distance
-function distance(x1, y1, x2, y2){
-  return Math.sqrt((x2-x11)**2 +(y2-y1)**2);
+
+function distance(x1, y1, x2, y2) {
+    return Math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2);
 }
+
 // 5) quadratic(a, b, c): roots of ax^2 + bx + c = 0
-function quadratic(a, b,c){
-  let disc= b*b-4*a*c;
-  if(disc>0){
-    let r1=(-b + Math.sqrt(disc))/(2*a);
-    let r2=(-b - Math.sqrt(disc))/(2*a);
-    return[-b/(2*a)];
-        } else if (disc === 0) {
+
+function quadratic(a, b, c) {
+    let disc = b * b - 4 * a * c;
+    if (disc > 0) {
+        let r1 = (-b + Math.sqrt(disc)) / (2 * a);
+        let r2 = (-b - Math.sqrt(disc)) / (2 * a);
+        return [r1, r2];
+    } else if (disc === 0) {
         return [-b / (2 * a)];
     } else {
         let real = (-b / (2 * a));
         let imag = (Math.sqrt(-disc) / (2 * a));
         return [real + "+" + imag + "i", real + "-" + imag + "i"];
-  }
+    }
 }
 
 // ----- Helpers -----
